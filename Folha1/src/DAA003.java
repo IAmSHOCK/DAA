@@ -1,41 +1,56 @@
 import java.util.Scanner;
 
-public class ED003 {
+public class DAA003 {
     static String m1;
     static String m2;
-    static int[][] flags;
 
 
     public static void solve(){
-        if(m1.charAt(0) >= 'A' && m1.charAt(0) <= 'Z')      flags[0][0] = 1; // 1 gen
-        else if(m1.charAt(3) >= 'A' && m1.charAt(3) <= 'Z') flags[0][0] = 2; // 2 gen
-        else if(m1.charAt(6) >= 'A' && m1.charAt(6) <= 'Z') flags[0][0] = 3; // 3 gen
+        int mat1 = 0;
+        int mat2 = 0;
+        if(m1.charAt(0) >= 'A' && m1.charAt(0) <= 'J' && m1.charAt(6) >= '0' &&  m1.charAt(6) <= '9')      mat1 += ((m1.charAt(0)) - 'A') * 10000;
+        else if(m1.charAt(0) >= 'L' && m1.charAt(0) <= 'V' && m1.charAt(6) >= '0' &&  m1.charAt(6) <= '9') mat1 += ((m1.charAt(0)) - 'A' - 1) * 10000;
+        else if(m1.charAt(0) == 'X' && m1.charAt(6) >= '0' &&  m1.charAt(6) <= '9')                        mat1 += 22;
+        else if(m1.charAt(0) == 'Z' && m1.charAt(6) >= '0' &&  m1.charAt(6) <= '9')                        mat1 += 23;
 
-        if(m2.charAt(0) >= 'A' && m2.charAt(0) <= 'Z')      flags[0][1] = 1;
-        else if(m2.charAt(3) >= 'A' && m2.charAt(3) <= 'Z') flags[0][1] = 2;
-        else if(m2.charAt(6) >= 'A' && m2.charAt(6) <= 'Z') flags[0][1] = 3;
+        else if(m1.charAt(6) >= 'A' && m1.charAt(6) <= 'J' && m1.charAt(3) >= '0' &&  m1.charAt(3) <= '9') mat1 += ((m1.charAt(6)) - 'A') * 10000 + 59000;
+        else if(m1.charAt(6) >= 'L' && m1.charAt(6) <= 'V' && m1.charAt(3) >= '0' &&  m1.charAt(3) <= '9') mat1 += ((m1.charAt(6)) - 'A' - 1) * 10000 + 59000;
+        else if(m1.charAt(6) == 'X' && m1.charAt(3) >= '0' &&  m1.charAt(3) <= '9')                        mat1 += 59000 + 22;
+        else if(m1.charAt(6) == 'Z' && m1.charAt(3) >= '0' &&  m1.charAt(3) <= '9')                        mat1 += 59000 + 23;
 
-        int sum = 0;
-        int dif = 0;
-        if (flags[0][0] == 1 && flags[0][1] = 1) { // m1 m2 sao da 1 gen
-            dif = m1.charAt(1) - m2.charAt(1);
-            sum += dif*1000;
-            dif = m1.charAt(0) - m2.charAt(0);
-            sum += dif*10000;
-            dif
+        else if(m1.charAt(3) >= 'A' && m1.charAt(3) <= 'J') mat1 += ((m1.charAt(3)) - 'A') * 10000 + 59000 + 59000;
+        else if(m1.charAt(3) >= 'L' && m1.charAt(3) <= 'V') mat1 += ((m1.charAt(3)) - 'A' - 1) * 10000 + 59000;
+        else if(m1.charAt(3) == 'X')                        mat1 += 59000 + 59000 + 22;
+        else if(m1.charAt(3) == 'Z')                        mat1 += 59000 + 59000 + 23;
 
-        }
+        else if
 
+        else if(m2.charAt(0) >= 'A' && m2.charAt(0) <= 'J' && m2.charAt(6) >= '0' &&  m2.charAt(6) <= '9') mat2 += ((m2.charAt(0)) - 'A') * 10000;
+        else if(m2.charAt(0) >= 'L' && m2.charAt(0) <= 'V' && m2.charAt(6) >= '0' &&  m2.charAt(6) <= '9') mat2 += ((m2.charAt(0)) - 'A' - 1) * 10000;
+        else if(m2.charAt(0) == 'X' && m2.charAt(6) >= '0' &&  m2.charAt(6) <= '9')                        mat2 += 22;
+        else if(m2.charAt(0) == 'Z' && m2.charAt(6) >= '0' &&  m2.charAt(6) <= '9')                        mat2 += 23;
 
+        else if(m2.charAt(6) >= 'A' && m2.charAt(6) <= 'J' && m2.charAt(3) >= '0' &&  m2.charAt(3) <= '9') mat2 += ((m2.charAt(6)) - 'A') * 10000 + 59000;
+        else if(m2.charAt(6) >= 'L' && m2.charAt(6) <= 'V' && m2.charAt(3) >= '0' &&  m2.charAt(3) <= '9') mat2 += ((m2.charAt(6)) - 'A' - 1) * 10000 + 59000;
+        else if(m2.charAt(6) == 'X' && m2.charAt(3) >= '0' &&  m2.charAt(3) <= '9')                        mat2 += 59000 + 22;
+        else if(m2.charAt(6) == 'Z' && m2.charAt(3) >= '0' &&  m2.charAt(3) <= '9')                        mat2 += 59000 + 23;
 
+        else if(m2.charAt(3) >= 'A' && m2.charAt(3) <= 'J') mat2 += ((m2.charAt(3)) - 'A') * 10000 + 59000 + 59000;
+        else if(m2.charAt(3) >= 'L' && m2.charAt(3) <= 'V') mat2 += ((m2.charAt(3)) - 'A' - 1) * 10000 + 59000;
+        else if(m2.charAt(3) == 'X')                        mat2 += 59000 + 59000 + 22;
+        else if(m2.charAt(3) == 'Z')                        mat2 += 59000 + 59000 + 23;
+
+        else if()
+        
+        if(mat1 > mat2) System.out.println(mat1-mat2);
+        else if(mat2 > mat1) System.out.println(mat2-mat1);
+        else System.out.println(mat1);
     }
 
     public static void input(Scanner in)
     {
         m1 = in.next();
         m2 = in.next();
-        flags = new int[1][2];
-
     }
 
     public static void main(String[] args) {

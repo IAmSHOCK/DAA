@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ED004 {
+public class DAA004 {
 
 
     public static long checksum(long n)

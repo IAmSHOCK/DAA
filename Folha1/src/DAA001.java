@@ -1,6 +1,6 @@
 import java.util.Arrays;
 import java.util.Scanner;
-public class ED001 {
+public class DAA001 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int count = 0;

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ED002 {
+public class DAA002 {
     public static int checksum(int n)
     {
         int nsum = 0;
